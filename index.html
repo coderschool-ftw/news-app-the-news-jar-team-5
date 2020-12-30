@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
-
+    <link rel="stylesheet" href="weatherWidget.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Google News</title>
   </head>
@@ -47,7 +47,12 @@
             </ul>
           </section>
           <section id="news"></section>
-          <section id="weather">Weather</section>
+          <section id="weather">
+            <div class="weather-widget">
+              <h1 id="temp-main">0°</h1>
+              <h2 id="condition">unknown</h2>
+            </div>
+          </section>
         </div>
       </div>
     </main>
@@ -56,5 +61,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
     <script src="script.js"></script>
+    <script src="weatherWidget.js"></script>
   </body>
 </html>
