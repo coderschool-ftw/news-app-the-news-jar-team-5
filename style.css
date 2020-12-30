@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  list-style: none;
+}
+#main {
+  display: flex;
+  align-content: center;
+}
+
+.navbar {
+  display: flex;
+  align-content: center;
+  height: 80px;
+  background-color: burlywood;
+
+  margin-bottom: 50px;
+}
+
+.extra-buttons {
+  margin-left: auto;
+}
+
+.main-section {
+  display: flex;
+  align-items: center;
+}
+#sidebar {
+  margin-right: auto;
+  width: 18%;
+}
+#weather {
+  margin-left: auto;
+  width: 18%;
+}
+#news {
+  width: 60%;
+}
+#news img {
+  width: 100%;
+}
+
+section {
+  border: 1px solid red;
+}
