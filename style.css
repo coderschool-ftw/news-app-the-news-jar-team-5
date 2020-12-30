@@ -30,7 +30,7 @@ ul {
 
 .main-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 #sidebar {
   margin-right: auto;

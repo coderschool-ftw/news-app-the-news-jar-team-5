@@ -1,0 +1,21 @@
+.weather-widget {
+  background-color: #5c7aff;
+  color: #fff;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 50px;
+}
+
+.weather-widget h1 {
+  font-size: 5em;
+  padding: 10px;
+  margin-left: 25px;
+  font-weight: 300;
+}
+
+.weather-widget h2 {
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 5px;
+}
