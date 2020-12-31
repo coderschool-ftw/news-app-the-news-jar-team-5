@@ -1,4 +1,4 @@
-# CoderSchool FTW - * Name of Your News MegaCorp Here *
+# CoderSchool FTW - * The News Jar *
 
 Created with love by: `teammates.map(teammate => teammate.name)`
   

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="weatherWidget.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Google News</title>
+  </head>
+  <body>
+    <nav id="header">
+      <div class="container">
+        <div class="navbar">
+          <ul class="logo">
+            <li>
+              <img src="The-News-Jar.png" style="height:65px;">
+            </li>
+          </ul>
+          <ul class="searchbox">
+            <li>
+              <input type="text" name="" id="searchbar" placeholder="search" />
+            </li>
+          </ul>
+          <ul class="extra-buttons">
+            <li>extraButtons</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <div class="container">
+        <div class="main-section">
+          <section id="sidebar">
+            <ul>
+              <li class="category"><a href="">Business</a></li>
+              <li class="category"><a href="">Technology</a></li>
+              <li class="category"><a href="">Entertainment</a></li>
+              <li class="category"><a href="">Sports</a></li>
+              <li class="category"><a href="">Health</a></li>
+              <li></li>
+            </ul>
+            <hr style="width:60%";>
+            <div id="getApp">
+              <ul>
+                <li><a href="">Get the app</a></li>
+                <li><a href="">Send feedback</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Settings</a></li>
+              </ul>
+              <hr style="width:60%";>
+            <footer id="footer">
+              <ul>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">About The News Jar</a></li>
+              </ul>
+            </footer>
+          </section>
+          <section id="news"></section>
+          <section id="weather">
+            <div class="weather-widget">
+              <h1 id="temp-main">0°</h1>
+              <h2 id="condition">unknown</h2>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+    <script src="script.js"></script>
+    <script src="weatherWidget.js"></script>
+  </body>
+</html>
