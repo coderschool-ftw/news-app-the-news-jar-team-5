@@ -1,14 +1,24 @@
 const API_KEY_JULIEN = "db84944e4adc4398803af0162c647905";
 
 const drawCard = (news) => {
-  return `<div class="card">
-    <img src="${news.urlToImage}" alt="img" class="card-img-top">
-    <h5>${news.title}</h5>
-    <p>${news.description}</p>
-    <a href="#" class="card-link">${news.source.name}</a>
-    <a href="#" class="card-link">More</a></a>    
-    <a href="#" class="card-link">${moment(news.publishedAt).fromNow()}</a>
-  </div>`;
+  return `<div class="example-2 card">
+<div class="wrapper" style="background: url(${news.urlToImage}) 20% 1%/cover no-repeat;">
+<div class="header">
+  <div class="date">
+    <div href="#" class="card-link">${moment(news.publishedAt).fromNow()}</div>
+  </div>
+</div>
+<div class="data">
+  <div class="content">
+    <span class="author">${news.source.name}</span>
+    <h1 class="title">${news.title}</h1>
+    <p class="text">${news.description}</p>
+    <a href="#" class="button">Read more</a>
+  </div>
+</div>
+</div>
+</div>`;
+            
 };
 
 const removeNews = () => {
