@@ -21,7 +21,7 @@
       <div class="container">
         <div class="navbar">
           <ul class="logo">
-            <li><img src="images/logo.png" height="80px"></li>
+            <li><img src="images/logo.png" height="80px" /></li>
           </ul>
           <ul class="searchbox">
             <li>
@@ -38,14 +38,44 @@
       <div class="container" id="left-side-menu">
         <div class="main-section">
           <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Categories </div>
+            <div class="sidebar-heading">Categories</div>
             <div class="list-group list-group-flush">
-              <a href="#" class="list-group-item list-group-item-action bg-light">Trending</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Business</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Technology</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Entertainment</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Sports</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Health</a>
+              <a
+                href="#"
+                id="trending"
+                class="list-group-item list-group-item-action bg-light"
+                >Trending</a
+              >
+              <a
+                href="#"
+                id="business"
+                class="list-group-item list-group-item-action bg-light"
+                >Business</a
+              >
+              <a
+                href="#"
+                id="technology"
+                class="list-group-item list-group-item-action bg-light"
+                >Technology</a
+              >
+              <a
+                href="#"
+                id="entertainment"
+                class="list-group-item list-group-item-action bg-light"
+                >Entertainment</a
+              >
+              <a
+                href="#"
+                id="sports"
+                class="list-group-item list-group-item-action bg-light"
+                >Sports</a
+              >
+              <a
+                href="#"
+                id="health"
+                class="list-group-item list-group-item-action bg-light"
+                >Health</a
+              >
             </div>
             <div id="getApp">
               <ul>
@@ -54,15 +84,17 @@
                 <li><a href="">Help</a></li>
                 <li><a href="">Settings</a></li>
               </ul>
-              <hr style="width:60%";>
-            <footer id="footer">
-              <ul>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Terms and Conditions</a></li>
-                <li><a href="">About The News Jar</a></li>
-              </ul>
-            </footer>
+              <hr style="width: 60%" ; />
+              <footer id="footer">
+                <ul>
+                  <li><a href="">Privacy Policy</a></li>
+                  <li><a href="">Terms and Conditions</a></li>
+                  <li><a href="">About The News Jar</a></li>
+                </ul>
+              </footer>
+            </div>
           </div>
+          <div id="filter-div"></div>
           <section id="news">
             <!-- <div class="example-2 card">
               <div class="wrapper" style="background: url(https://www.rollingstone.com/wp-content/uploads/2018/06/mib-1b7ebbde-d567-4437-9107-27d273313d5b.jpg?resize=1800,1200&w=1800) 20% 1%/cover no-repeat;">
@@ -125,8 +157,8 @@
                 <a href="#" class="card-link btn btn-primary">More</a>
               </div>
             </div> -->
-              
-              <!-- <div class="card">
+
+            <!-- <div class="card">
                   <div class="row">
                     <div class="col-sm-5">
                       <img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">

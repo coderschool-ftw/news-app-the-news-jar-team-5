@@ -2,7 +2,9 @@ const API_KEY_JULIEN = "db84944e4adc4398803af0162c647905";
 
 const drawCard = (news) => {
   return `<div class="example-2 card">
-<div class="wrapper" style="background: url(${news.urlToImage}) 20% 1%/cover no-repeat;">
+<div class="wrapper" style="background: url(${
+    news.urlToImage
+  }) 20% 1%/cover no-repeat;">
 <div class="header">
   <div class="date">
     <div href="#" class="card-link">${moment(news.publishedAt).fromNow()}</div>
@@ -18,12 +20,45 @@ const drawCard = (news) => {
 </div>
 </div>
 </div>`;
-            
 };
 
-const removeNews = () => {
+const drawFilterBar = (news) => {
+  const sources = news
+    .map((article) => article)
+    .reduce((sources, article) => {
+      sources[`${article.source.name}`] = news.filter(
+        (test) => test.source.name === article.source.name
+      ).length;
+      return sources;
+    }, {});
+
+  let output = [];
+  Object.entries(sources).forEach((source) => {
+    output.push(`<div>
+    <label for="">${source[0]} (${source[1]})</label><input type="checkbox" name="" id="${source[0]}" checked />
+  </div>`);
+  });
+
+  return output.join("\n");
+};
+
+const createEventListenersFilter = () => {
+  const checkboxes = document.querySelectorAll("input[type = checkbox]");
+  checkboxes.forEach((checkbox) =>
+    checkbox.addEventListener("change", (e) => filterNews(e.target.id))
+  );
+};
+
+const filterNews = (filterOut) => {
+  console.log("Source to be filtered out", filterOut);
+};
+const clearNews = () => {
   const newsSection = document.getElementById("news");
   newsSection.innerHTML = "";
+};
+const clearFilters = () => {
+  const filterSection = document.getElementById("filter-div");
+  filterSection.innerHTML = "";
 };
 const searchBar = document
   .getElementById("searchbar")
@@ -40,14 +75,36 @@ const update = async (requestType) => {
 };
 
 const render = (news) => {
-  removeNews();
+  clearNews();
+  clearFilters();
   const newsSection = document.getElementById("news");
+  const aboveNews = document.getElementById("left-side-menu");
   const outputHtml = document.createElement("div");
+  const filterHtml = document.getElementById("filter-div");
   const output = news.map((article) => {
     return drawCard(article);
   });
   outputHtml.innerHTML = output.join("\n");
+  newsSection.innerHTML = `<div>Number of results : ${news.length}</div>`;
   newsSection.appendChild(outputHtml);
+  filterHtml.innerHTML = drawFilterBar(news);
+  createEventListenersFilter();
+  aboveNews.appendChild(filterHtml);
 };
 
+document.getElementById("business").addEventListener("click", () => {
+  update("business");
+});
+document.getElementById("entertainment").addEventListener("click", () => {
+  update("entertainment");
+});
+document.getElementById("technology").addEventListener("click", () => {
+  update("tech");
+});
+document.getElementById("sports").addEventListener("click", () => {
+  update("game");
+});
+document.getElementById("health").addEventListener("click", () => {
+  update("health");
+});
 update();
