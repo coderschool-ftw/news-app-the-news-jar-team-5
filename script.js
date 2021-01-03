@@ -1,4 +1,8 @@
 const API_KEY_JULIEN = "db84944e4adc4398803af0162c647905";
+let newsState = [];
+let filteredNewsState = [];
+let sourcesToFilter = [];
+let sourcesFiltered = [];
 
 const drawCard = (news) => {
   return `<div class="example-2 card">
@@ -23,35 +27,60 @@ const drawCard = (news) => {
 };
 
 const drawFilterBar = (news) => {
-  const sources = news
+  const sources = newsState
     .map((article) => article)
     .reduce((sources, article) => {
       sources[`${article.source.name}`] = news.filter(
         (test) => test.source.name === article.source.name
       ).length;
       return sources;
+      //sources = {Source name 1 : Number of stories, Source name 2 : Number of stories...}
     }, {});
-
   let output = [];
+
+  // Builds HTML
+  // If Source is filtered out (in sourcestoFilter), uncheck
   Object.entries(sources).forEach((source) => {
     output.push(`<div>
-    <label for="">${source[0]} (${source[1]})</label><input type="checkbox" name="" id="${source[0]}" checked />
-  </div>`);
+    <label for="">${source[0]} (${
+      source[1]
+    })</label><input type="checkbox"  id="${source[0]}" ${
+      sourcesToFilter.includes(source[0]) ? "" : "checked"
+    }/>
+    </div>`);
   });
 
+  sourcesFiltered = output.join("\n");
   return output.join("\n");
 };
 
+// Add Change event listener to all checkboxes
+// If checked -> push source in sourcesToFilter
+// Else -> Remove source from sourcesToFilter
+// Call filternews
 const createEventListenersFilter = () => {
   const checkboxes = document.querySelectorAll("input[type = checkbox]");
   checkboxes.forEach((checkbox) =>
-    checkbox.addEventListener("change", (e) => filterNews(e.target.id))
+    checkbox.addEventListener("change", (e) => {
+      if (e.target.outerHTML.includes("checked")) {
+        sourcesToFilter.push(e.target.id);
+      } else {
+        sourcesToFilter.splice(sourcesToFilter.indexOf(e.target.id, 1));
+      }
+      filterNews();
+    })
   );
 };
 
-const filterNews = (filterOut) => {
-  console.log("Source to be filtered out", filterOut);
+// Filters  blacklisted sources out of newsState
+// Calls render
+const filterNews = () => {
+  filteredNewsState = newsState.filter(
+    (news) => !sourcesToFilter.includes(news.source.name)
+  );
+  render(filteredNewsState);
 };
+
 const clearNews = () => {
   const newsSection = document.getElementById("news");
   newsSection.innerHTML = "";
@@ -71,7 +100,8 @@ const update = async (requestType) => {
     : "https://newsapi.org/v2/top-headlines?country=us&apiKey=db84944e4adc4398803af0162c647905";
   const res = await fetch(url);
   const data = await res.json();
-  render(data.articles);
+  newsState = data.articles;
+  render(newsState);
 };
 
 const render = (news) => {
@@ -88,6 +118,7 @@ const render = (news) => {
   newsSection.innerHTML = `<div>Number of results : ${news.length}</div>`;
   newsSection.appendChild(outputHtml);
   filterHtml.innerHTML = drawFilterBar(news);
+
   createEventListenersFilter();
   aboveNews.appendChild(filterHtml);
 };
