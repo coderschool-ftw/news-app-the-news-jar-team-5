@@ -218,3 +218,7 @@ h1 {
   opacity: 1;
   background-color: black;
 }
+
+.invisible {
+  display: none;
+}

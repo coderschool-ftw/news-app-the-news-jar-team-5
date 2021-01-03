@@ -148,4 +148,8 @@ document.getElementById("previous").addEventListener("click", (e) => {
   pageNumber--;
   update();
 });
+
+document.getElementById("hamburger").addEventListener("click", () => {
+  document.getElementById("sidebar-wrapper").classList.toggle("invisible");
+});
 update();
