@@ -12,24 +12,42 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="weatherWidget.css" />
+    <link rel="stylesheet" href="hamburger.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Google News</title>
   </head>
   <body>
     <nav id="header">
-      <div class="container">
-        <div class="navbar">
-          <ul class="logo">
-            <li><img src="images/logo.png" height="80px"></li>
-          </ul>
-          <ul class="searchbox">
+      <div class="container-fluid" id="nav-container">
+        <div class="navbar container" id="nav-container-2">
+          <ul id="hamburger-ul">
             <li>
-              <input type="text" name="" id="searchbar" placeholder="search" />
+              <button class="hamburger" type="button" id="hamburger">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </li>
+          </ul>
+          <ul class="logo">
+            <li><img src="images/logo-1.png" height="70px"></li>
+          </ul>
+          <ul class="searchbox position-absolute top-50 start-50 translate-middle" id="searchbox-1">
+            <li>
+              <input type="text" name="" id="searchbar" placeholder="search" style="height: 32px;"/>
+              <button type="submit"><i class="fa fa-search"></i></button>
             </li>
           </ul>
           <ul class="extra-buttons">
-            <li>extraButtons</li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                  </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -38,16 +56,65 @@
       <div class="container" id="left-side-menu">
         <div class="main-section">
           <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Categories </div>
+            <div class="sidebar-heading">Categories</div>
             <div class="list-group list-group-flush">
-              <a href="#" class="list-group-item list-group-item-action bg-light">Trending</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Business</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Technology</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Entertainment</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Sports</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light">Health</a>
+              <a
+                href="#"
+                id="trending"
+                class="list-group-item list-group-item-action bg-light"
+                >Trending</a
+              >
+              <a
+                href="#"
+                id="business"
+                class="list-group-item list-group-item-action bg-light"
+                >Business</a
+              >
+              <a
+                href="#"
+                id="technology"
+                class="list-group-item list-group-item-action bg-light"
+                >Technology</a
+              >
+              <a
+                href="#"
+                id="entertainment"
+                class="list-group-item list-group-item-action bg-light"
+                >Entertainment</a
+              >
+              <a
+                href="#"
+                id="sports"
+                class="list-group-item list-group-item-action bg-light"
+                >Sports</a
+              >
+              <a
+                href="#"
+                id="health"
+                class="list-group-item list-group-item-action bg-light"
+                >Health</a
+              >
+
+            </div>
+            <div id="getApp">
+              <ul>
+                <li><a href="">Get the app</a></li>
+                <li><a href="">Send feedback</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Settings</a></li>
+              </ul>
+              <hr style="width: 60%" ; />
+              <footer id="footer">
+                <ul>
+                  <li><a href="">Privacy Policy</a></li>
+                  <li><a href="">Terms and Conditions</a></li>
+                  <li><a href="">About The News Jar</a></li>
+                </ul>
+              </footer>
             </div>
           </div>
+          <div id="filter-div"></div>
+
           <section id="news">
             <!-- <div class="example-2 card">
               <div class="wrapper" style="background: url(https://www.rollingstone.com/wp-content/uploads/2018/06/mib-1b7ebbde-d567-4437-9107-27d273313d5b.jpg?resize=1800,1200&w=1800) 20% 1%/cover no-repeat;">
@@ -110,26 +177,11 @@
                 <a href="#" class="card-link btn btn-primary">More</a>
               </div>
             </div> -->
-              
-              <!-- <div class="card">
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
-                    </div>
-                    <div class="col">
-                      <div class="card-block">
-                        <h4 class="card-title">Title of the article goes here</h4>
-                        <a href="#" class="card-link">CNN</a>
-                        <br>
-                        <a href="#" class="card-link">2 hours ago</a>
-                        <p class="card-text"> The Description of the article goes here let's see if the line is too long what will happen here.</p>
-                        <br>
-                        <a href="#" class="btn btn-default btn-sm float-right">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-              </div> -->
           </section>
+          <button type="button" id="previous" style="background-color: black; color: white;">‹</button>
+          <button type="button" style="background-color: black; color: white;">Page</button>
+          <button type="button" id="next" style="background-color: black; color: white;">›</button>
+
           <section id="weather">
             <div class="weather-widget">
               <h1 id="temp-main">0°</h1>
