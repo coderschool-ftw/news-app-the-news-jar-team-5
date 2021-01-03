@@ -3,6 +3,7 @@ let newsState = [];
 let filteredNewsState = [];
 let sourcesToFilter = [];
 let sourcesFiltered = [];
+let pageNumber = 1;
 
 const drawCard = (news) => {
   return `<div class="example-2 card">
@@ -97,7 +98,7 @@ const searchBar = document
 const update = async (requestType) => {
   const url = requestType
     ? `https://newsapi.org/v2/top-headlines?q=${requestType}&country=us&apiKey=db84944e4adc4398803af0162c647905`
-    : "https://newsapi.org/v2/top-headlines?country=us&apiKey=db84944e4adc4398803af0162c647905";
+    : `https://newsapi.org/v2/top-headlines?country=us&page=${pageNumber}&apiKey=db84944e4adc4398803af0162c647905`;
   const res = await fetch(url);
   const data = await res.json();
   newsState = data.articles;
@@ -137,5 +138,14 @@ document.getElementById("sports").addEventListener("click", () => {
 });
 document.getElementById("health").addEventListener("click", () => {
   update("health");
+});
+
+document.getElementById("next").addEventListener("click", (e) => {
+  pageNumber++;
+  update();
+});
+document.getElementById("previous").addEventListener("click", (e) => {
+  pageNumber--;
+  update();
 });
 update();
