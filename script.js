@@ -10,6 +10,7 @@ const drawCard = (news) => {
 <div class="wrapper" style="background: url(${
     news.urlToImage
   }) 20% 1%/cover no-repeat;">
+
 <div class="header">
   <div class="date">
     <div href="#" class="card-link">${moment(news.publishedAt).fromNow()}</div>
@@ -25,6 +26,7 @@ const drawCard = (news) => {
 </div>
 </div>
 </div>`;
+
 };
 
 const drawFilterBar = (news) => {
