@@ -14,7 +14,6 @@ const getWeather = async (position) => {
   let baseURL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${WEATHER_API_KEY}`;
   const res = await fetch(baseURL);
   const data = await res.json();
-  console.log("weather", data);
 
   let temperature = Math.floor(data.current.temp - 273);
   let condition = data.current.weather[0].description;
