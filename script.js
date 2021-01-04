@@ -43,10 +43,10 @@ const drawFilterBar = (news) => {
   // Builds HTML
   // If Source is filtered out (in sourcestoFilter), uncheck
   Object.entries(sources).forEach((source) => {
-    output.push(`<div>
-    <label for="">${source[0]} (${
+    output.push(`<div style="display: inline-block; margin-right: 10px;">
+    <label for="">  ${source[0]} (${
       source[1]
-    })</label><input type="checkbox"  id="${source[0]}" ${
+    })</label> <input type="checkbox" id="${source[0]}" ${
       sourcesToFilter.includes(source[0]) ? "" : "checked"
     }/>
     </div>`);
