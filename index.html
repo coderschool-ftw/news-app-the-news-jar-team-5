@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="weatherWidget.css" />
     <link rel="stylesheet" href="hamburger.css" />
     <link rel="stylesheet" href="style.css" />
@@ -19,9 +23,9 @@
   </head>
   <body>
     <nav id="header">
-      <div class="container">
-        <div class="navbar">
-          <ul>
+      <div class="container-fluid" id="nav-container">
+        <div class="navbar container" id="nav-container-2">
+          <ul id="hamburger-ul">
             <li>
               <button class="hamburger" type="button" id="hamburger">
                 <span class="hamburger-box">
@@ -31,15 +35,39 @@
             </li>
           </ul>
           <ul class="logo">
-            <li><img src="images/logo.png" height="80px"></li>
+            <li><img src="images/logo-1.png" height="70px" /></li>
           </ul>
-          <ul class="searchbox">
+          <ul
+            class="searchbox position-absolute top-50 start-50 translate-middle"
+            id="searchbox-1"
+          >
             <li>
-              <input type="text" name="" id="searchbar" placeholder="search" />
+              <input
+                type="text"
+                name=""
+                id="searchbar"
+                placeholder="search"
+                style="height: 32px"
+              />
+              <button type="submit"><i class="fa fa-search"></i></button>
             </li>
           </ul>
           <ul class="extra-buttons">
-            <li>extraButtons</li>
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-user"></span> Profile</a
+              >
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                ><span class="glyphicon glyphicon-log-in"></span> Login / Sign
+                Up <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -106,7 +134,6 @@
             </div>
           </div>
           <div id="filter-div"></div>
-
           <section id="news">
             <!-- <div class="example-2 card">
               <div class="wrapper" style="background: url(https://www.rollingstone.com/wp-content/uploads/2018/06/mib-1b7ebbde-d567-4437-9107-27d273313d5b.jpg?resize=1800,1200&w=1800) 20% 1%/cover no-repeat;">
@@ -169,30 +196,24 @@
                 <a href="#" class="card-link btn btn-primary">More</a>
               </div>
             </div> -->
-
-              
-              <!-- <div class="card">
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <img class="d-block w-100" src="https://picsum.photos/150?image=641" alt="">
-                    </div>
-                    <div class="col">
-                      <div class="card-block">
-                        <h4 class="card-title">Title of the article goes here</h4>
-                        <a href="#" class="card-link">CNN</a>
-                        <br>
-                        <a href="#" class="card-link">2 hours ago</a>
-                        <p class="card-text"> The Description of the article goes here let's see if the line is too long what will happen here.</p>
-                        <br>
-                        <a href="#" class="btn btn-default btn-sm float-right">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-              </div> -->
           </section>
-          <button type="button" id="previous">PREVIOUS PAGE</button>
-
-          <button type="button" id="next">NEXT PAGE</button>
+          <button
+            type="button"
+            id="previous"
+            style="background-color: black; color: white"
+          >
+            ‹
+          </button>
+          <button type="button" style="background-color: black; color: white">
+            Page
+          </button>
+          <button
+            type="button"
+            id="next"
+            style="background-color: black; color: white"
+          >
+            ›
+          </button>
 
           <section id="weather">
             <div class="weather-widget">
@@ -203,7 +224,6 @@
         </div>
       </div>
     </main>
-    <footer id="footer">Footer</footer>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>

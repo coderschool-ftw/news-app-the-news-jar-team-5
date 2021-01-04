@@ -1,4 +1,4 @@
-const API_KEY_JULIEN = "db84944e4adc4398803af0162c647905";
+const API_KEY_JULIEN = "defd19c83e5844bd88287d0bba078e59";
 let newsState = [];
 let filteredNewsState = [];
 let sourcesToFilter = [];
@@ -6,7 +6,7 @@ let sourcesFiltered = [];
 let pageNumber = 1;
 
 const drawCard = (news) => {
-  return `<div class="example-2 card">
+  return `<br><div class="example-2 card">
 <div class="wrapper" style="background: url(${
     news.urlToImage
   }) 20% 1%/cover no-repeat;">
@@ -99,8 +99,8 @@ const searchBar = document
   });
 const update = async (requestType) => {
   const url = requestType
-    ? `https://newsapi.org/v2/top-headlines?q=${requestType}&country=us&apiKey=db84944e4adc4398803af0162c647905`
-    : `https://newsapi.org/v2/top-headlines?country=us&page=${pageNumber}&apiKey=db84944e4adc4398803af0162c647905`;
+    ? `https://newsapi.org/v2/top-headlines?q=${requestType}&country=us&apiKey=defd19c83e5844bd88287d0bba078e59`
+    : `https://newsapi.org/v2/top-headlines?country=us&page=${pageNumber}&apiKey=defd19c83e5844bd88287d0bba078e59`;
   const res = await fetch(url);
   const data = await res.json();
   newsState = data.articles;
