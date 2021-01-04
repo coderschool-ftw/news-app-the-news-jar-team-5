@@ -27,7 +27,7 @@ ul {
   background-color: black;
   align-items: center;
   margin-bottom: 50px;
-  height:90px;
+  height: 90px;
 }
 
 #nav-container-2 {
@@ -95,10 +95,10 @@ a.list-group-item {
 
 #sidebar-wrapper {
   min-height: 100vh;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -172,7 +172,7 @@ h1 {
   width: 100%;
   transform: translateY(calc(70px + 1em));
   transition: transform 0.3s;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .card .data .content {
   padding: 1em;
@@ -198,10 +198,10 @@ h1 {
   height: 70px;
   margin: 0;
 }
-.card input[type=checkbox] {
+.card input[type="checkbox"] {
   display: none;
 }
-.card input[type=checkbox]:checked + .menu-content {
+.card input[type="checkbox"]:checked + .menu-content {
   transform: translateY(-60px);
 }
 
@@ -217,7 +217,8 @@ h1 {
   color: #fff;
   padding: 1em;
 }
-.example-2 .header::before, .example-2 .header::after {
+.example-2 .header::before,
+.example-2 .header::after {
   content: "";
   display: table;
 }
@@ -264,4 +265,13 @@ h1 {
 }
 .invisible {
   display: none;
+}
+
+.stories {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 5px;
+  width: fit-content;
+  margin-left: 15px;
 }

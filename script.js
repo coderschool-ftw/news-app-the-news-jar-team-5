@@ -117,7 +117,7 @@ const render = (news) => {
     return drawCard(article);
   });
   outputHtml.innerHTML = output.join("\n");
-  newsSection.innerHTML = `<div>Number of results : ${news.length}</div>`;
+  newsSection.innerHTML = `<div class="stories">${news.length} stories</div>`;
   newsSection.appendChild(outputHtml);
   filterHtml.innerHTML = drawFilterBar(news);
   createEventListenersFilter();
