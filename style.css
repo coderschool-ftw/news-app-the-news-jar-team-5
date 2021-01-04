@@ -108,9 +108,29 @@ a.list-group-item {
   font-size: 2rem;
 }
 
+#getApp > ul {
+  padding-left: 0px;
+  line-height: 1.8;
+}
+
+#footer > ul {
+  padding-left: 0px;
+  line-height: 1.8;
+}
+
+#getApp > ul > li > a {
+  color: black;
+}
+
+#footer > ul > li > a {
+  color: black;
+}
+
 #sidebar-wrapper .list-group {
   width: 15rem;
 }
+
+
 
 /* .card-block {
   font-size: 1em;
