@@ -1,5 +1,7 @@
 # CoderSchool FTW - * The News Jar *
 
+URL: https://pedantic-hugle-b4b1cf.netlify.app/
+
 Created with love by: Julien, Rick, and Aaron
   
 The News Jar is a site with the News API connected. Visitors can filter news by categories. The style is based off of Google News.
