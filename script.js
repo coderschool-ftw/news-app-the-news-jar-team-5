@@ -123,7 +123,9 @@ const render = (news) => {
   createEventListenersFilter();
   aboveNews.appendChild(filterHtml);
 };
-
+document
+  .getElementById("search-button")
+  .addEventListener("click", () => update(searchbar.value));
 document.getElementById("business").addEventListener("click", () => {
   update("business");
 });
