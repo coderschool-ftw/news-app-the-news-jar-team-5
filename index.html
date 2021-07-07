@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="weatherWidget.css" />
+    <link rel="stylesheet" href="hamburger.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>The News Jar</title>
+  </head>
+  <body>
+    <nav id="header">
+      <div class="container-fluid" id="nav-container">
+        <div class="navbar container" id="nav-container-2">
+          <ul id="hamburger-ul">
+            <li>
+              <button class="hamburger" type="button" id="hamburger">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </li>
+          </ul>
+          <ul class="logo">
+            <li><img src="images/logo-1.png" height="70px" /></li>
+          </ul>
+          <ul
+            class="searchbox position-absolute top-50 start-50 translate-middle"
+            id="searchbox-1"
+          >
+            <li>
+              <input
+                type="text"
+                name=""
+                id="searchbar"
+                placeholder="Search for topics, locations & sources"
+                style="height: 32px"
+              />
+              <button type="submit" id="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </li>
+          </ul>
+          <ul class="extra-buttons">
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-user"></span> Profile</a
+              >
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                ><span class="glyphicon glyphicon-log-in"></span> Login / Sign
+                Up <span class="caret"></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <div class="container" id="left-side-menu">
+        <div class="main-section">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Categories</div>
+            <div class="list-group list-group-flush">
+              <a
+                href="#"
+                id="trending"
+                class="list-group-item list-group-item-action bg-light"
+                ><i class="fa fa-chevron-circle-up" aria-hidden="true"></i> Trending</a
+              >
+              <a
+                href="#"
+                id="business"
+                class="list-group-item list-group-item-action bg-light"
+                ><i class="fa fa-briefcase" aria-hidden="true"></i> Business</a
+              >
+              <a
+                href="#"
+                id="technology"
+                class="list-group-item list-group-item-action bg-light"
+                ><i class="fa fa-laptop" aria-hidden="true"></i> Technology</a
+              >
+              <a
+                href="#"
+                id="entertainment"
+                class="list-group-item list-group-item-action bg-light"
+                ><i class="fa fa-film" aria-hidden="true"></i> Entertainment</a
+              >
+              <a
+                href="#"
+                id="sports"
+                class="list-group-item list-group-item-action bg-light"
+                ><i class="fa fa-futbol-o" aria-hidden="true"></i> Sports</a
+              >
+              <a
+                href="#"
+                id="health"
+                class="list-group-item list-group-item-action bg-light"
+                ><i class="fa fa-heartbeat" aria-hidden="true"></i> Health</a
+              >
+
+            </div>
+            <div id="getApp">
+              <ul>
+                <li><a href=""><i class="fa fa-download" aria-hidden="true"></i> Get the app</a></li>
+                <li><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i> Send feedback</a></li>
+                <li><a href=""><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a></li>
+                <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+              </ul>
+              <hr style="width: 60%" ; />
+              <footer id="footer">
+                <ul>
+                  <li><a href=""><i class="fa fa-id-card-o" aria-hidden="true"></i> Privacy Policy</a></li>
+                  <li><a href=""><i class="fa fa-asterisk" aria-hidden="true"></i> Terms and Conditions</a></li>
+                  <li><a href=""><i class="fa fa-info-circle" aria-hidden="true"></i> About The News Jar</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div id="filter-div" style="margin-left:168px; width:732px;"></div>
+          <section id="news">
+            <!-- <div class="example-2 card">
+              <div class="wrapper" style="background: url(https://www.rollingstone.com/wp-content/uploads/2018/06/mib-1b7ebbde-d567-4437-9107-27d273313d5b.jpg?resize=1800,1200&w=1800) 20% 1%/cover no-repeat;">
+                <div class="header">
+                  <div class="date">
+                    <div href="#" class="card-link">2 hours ago</div>
+                  </div>
+                </div>
+                <div class="data">
+                  <div class="content">
+                    <span class="author">CNN</span>
+                    <h1 class="title"><a href="#">Let's pretend we have a very very long article's title here</a></h1>
+                    <p class="text">Here goes a 2 lines description of the article here. Let's type in something more long enough to make it to line number 2.</p>
+                    <a href="#" class="button">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </section>
+          <button
+            type="button"
+            id="previous"
+            style="background-color: black; color: white"
+          >
+            ‹
+          </button>
+          <button type="button" style="background-color: black; color: white">
+            Page
+          </button>
+          <button
+            type="button"
+            id="next"
+            style="background-color: black; color: white"
+          >
+            ›
+          </button>
+
+          <section id="weather">
+            <div class="weather-widget">
+              <h1 id="temp-main">0°</h1>
+              <h2 id="condition">unknown</h2>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+    <script src="script.js"></script>
+    <script src="weatherWidget.js"></script>
+  </body>
+</html>
